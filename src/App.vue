@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <MyFilm @ricerca="Search"/>
-    <MyList :movies="list" />
+    <MyFilm @ricerca="search"
+    />
+    <MyList :movies="listMovie" 
+    :tvShow="listTv"/>
   </div>
 </template>
 
@@ -18,24 +20,35 @@ export default {
   },
   data() {
     return {
-      list: [],
       searchMovie: "",
-      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=8e7b0a6fcea87ee9de24d9a762df1b39&query=",
+      apiUrlmovie: "https://api.themoviedb.org/3/search/movie?api_key=8e7b0a6fcea87ee9de24d9a762df1b39&query=",
+      listMovie: [],
+      apiUrltv: "https://api.themoviedb.org/3/search/tv?api_key=8e7b0a6fcea87ee9de24d9a762df1b39&query=",
+      listTv: [],
     }
 
   },
   methods: {
     getMovies() {
       axios
-      .get(this.apiUrl+this.searchMovie)
+      .get(this.apiUrlmovie+this.searchMovie)
       .then((result) => {
-        this.list = result.data.results
+        this.listMovie = result.data.results
       });
+      
     },
-    Search(searchMovie) {
+    search(searchMovie) {
       this.searchMovie = searchMovie;
       this.getMovies();
-    }
+      this.getTv();
+    },
+    getTv() {
+      axios
+      .get(this.apiUrltv+this.searchMovie)
+      .then((result) => {
+        this.listTv = result.data.results
+      });
+    },
   }
 }
 </script>

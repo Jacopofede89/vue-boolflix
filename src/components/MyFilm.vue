@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <section>
     <div class="title">
         <h2>Boolflix</h2>
     </div>
@@ -9,7 +9,7 @@
         <button @click.prevent="$emit('ricerca', title)">Cerca</button>
       </form>
     </div>
-  </header>
+  </section>
 </template>
 
 <script>
@@ -25,7 +25,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-header {
+section {
+  height: 10vh;
     background-color: black;
     border:solid 2px red;
     display: flex;

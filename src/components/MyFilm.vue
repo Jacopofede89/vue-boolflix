@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="card">
-      <div class="title">Boolflix</div>
+      <div class="title"><strong>BOOLFLIX</strong></div>
     <div id="searching">
       <form>
         <input type="text" placeholder="Cerca" v-model="title">

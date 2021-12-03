@@ -60,6 +60,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color:white;
+  /* height:auto;
+  background-color: black; */
 }
 * {
   margin: 0;

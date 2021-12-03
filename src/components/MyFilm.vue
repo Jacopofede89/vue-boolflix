@@ -1,14 +1,14 @@
 <template>
   <section>
-    <div class="title">
-        <h2>Boolflix</h2>
-    </div>
+    <div class="card">
+      <div class="title">Boolflix</div>
     <div id="searching">
       <form>
         <input type="text" placeholder="Cerca" v-model="title">
         <button @click.prevent="$emit('ricerca', title)">Cerca</button>
       </form>
     </div>
+    </div>    
   </section>
 </template>
 
@@ -26,21 +26,22 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 section {
-  height: 10vh;
     background-color: black;
-    border:solid 2px red;
-    display: flex;
-    justify-content: space-between;
+    border:solid 5px gold;
+    .card{
+      width:100%;
+      height: 100px;
+    }
     .title {
-      h2 {
-          color: red;
-          font-size: 20px;
-          padding: 20px;
-      }
-        
+      height:50px;
+      color: gold;
+      font-size: 30px;
+      padding: 20px;
+      float: left;
     }
     #searching {
       padding: 20px;
+      float: right;
       input {
         height: 25px;
       }
@@ -52,5 +53,6 @@ section {
         line-height: 10%;
       }
     }
+
 }
 </style>

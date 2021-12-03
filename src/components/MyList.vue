@@ -27,7 +27,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 main {
-  padding: 15px;
   background-color: black;
 }
 </style>
